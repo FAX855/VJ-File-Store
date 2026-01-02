@@ -14,11 +14,6 @@ import logging.config
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
 # Ask Doubt on telegram @KingVJ01
 
-# peer id invaild fixxx
-from pyrogram import utils as pyroutils
-pyroutils.MIN_CHAT_ID = -999999999999
-pyroutils.MIN_CHANNEL_ID = -100999999999999
-
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
@@ -28,7 +23,7 @@ logging.getLogger("pyrogram").setLevel(logging.ERROR)
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
 # Ask Doubt on telegram @KingVJ01
 
-
+from pyrogram import utils as pyroutils
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from config import LOG_CHANNEL, ON_HEROKU, CLONE_MODE, PORT
@@ -54,6 +49,9 @@ from TechVJ.bot.clients import initialize_clients
 # Don't Remove Credit Tg - @VJ_Bots
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
 # Ask Doubt on telegram @KingVJ01
+pyroutils.MIN_CHAT_ID = -999999999999
+pyroutils.MIN_CHANNEL_ID = -100999999999999
+
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
